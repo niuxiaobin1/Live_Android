@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: :ti-sdk:@aar">
+    <CLASSES>
+      <root url="jar://D:/Program Files/Android/.gradle/caches/transforms-1/files-1.1/ti-sdk.aar/3bb8328fc70bc1662033bfc9b0f4339f/jars/classes.jar!/" />
+      <root url="file://D:/Program Files/Android/.gradle/caches/transforms-1/files-1.1/ti-sdk.aar/3bb8328fc70bc1662033bfc9b0f4339f/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

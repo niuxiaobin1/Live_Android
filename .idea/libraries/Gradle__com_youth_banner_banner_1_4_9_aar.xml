@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.youth.banner:banner:1.4.9@aar">
+    <CLASSES>
+      <root url="file://D:/Program Files/Android/.gradle/caches/transforms-1/files-1.1/banner-1.4.9.aar/51a04fd61e473ddd37c1ea2ce5f58549/res" />
+      <root url="jar://D:/Program Files/Android/.gradle/caches/transforms-1/files-1.1/banner-1.4.9.aar/51a04fd61e473ddd37c1ea2ce5f58549/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/Program Files/Android/.gradle/caches/modules-2/files-2.1/com.youth.banner/banner/1.4.9/f29c52e344b0ea9f9aeffd48ca1c3cb6ea4d41fc/banner-1.4.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

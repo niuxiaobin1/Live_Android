@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_above="@id/cancelTv"
+        android:paddingTop="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_20"
+        android:background="@drawable/bg_btm_top_conners"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/qqShareTv"
+            android:gravity="center"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableTop="@mipmap/share_qq_icon"
+            android:text="QQ"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/wxShareTv"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:gravity="center"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableTop="@mipmap/share_wx_icon"
+            android:text="微信"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:padding="@dimen/dp_10"
+        android:id="@+id/cancelTv"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:textSize="18sp"
+        android:text="取消"
+        android:textColor="@color/textColor"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

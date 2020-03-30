@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:D.\AndroidProject\Live_Android\common\libs\alipaySdk-20180601.jar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/common/libs/alipaySdk-20180601.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

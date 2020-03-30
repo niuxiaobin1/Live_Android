@@ -1,0 +1,42 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.yunbao.video"
+    >
+
+    <application
+        android:allowBackup="true"
+        android:theme="@style/AppTheme"
+        >
+        <activity
+            android:name=".activity.VideoPlayActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"
+            />
+        <activity
+            android:name=".activity.VideoRecordActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"
+            />
+        <activity
+            android:name=".activity.VideoChooseActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".activity.VideoEditActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".activity.VideoPublishActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".activity.VideoReportActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            />
+        <activity
+            android:name=".activity.VideoGoodsAddActivity"
+            android:screenOrientation="portrait"
+            />
+    </application>
+
+</manifest>

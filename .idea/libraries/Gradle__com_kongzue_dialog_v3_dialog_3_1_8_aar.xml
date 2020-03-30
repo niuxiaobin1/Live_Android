@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.kongzue.dialog_v3:dialog:3.1.8@aar">
+    <CLASSES>
+      <root url="jar://D:/Program Files/Android/.gradle/caches/transforms-1/files-1.1/dialog-3.1.8.aar/1cc6c7f01c1e0a4ce4c280bc2b583d77/jars/classes.jar!/" />
+      <root url="file://D:/Program Files/Android/.gradle/caches/transforms-1/files-1.1/dialog-3.1.8.aar/1cc6c7f01c1e0a4ce4c280bc2b583d77/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/Program Files/Android/.gradle/caches/modules-2/files-2.1/com.kongzue.dialog_v3/dialog/3.1.8/a1c8b759389db62419f3ceb86c7cbb88c9d79ea8/dialog-3.1.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

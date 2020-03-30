@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="main_tab_home">
+        <item>@mipmap/icon_main_tab_home_00</item>
+        <item>@mipmap/icon_main_tab_home_01</item>
+        <item>@mipmap/icon_main_tab_home_02</item>
+        <item>@mipmap/icon_main_tab_home_03</item>
+        <item>@mipmap/icon_main_tab_home_04</item>
+        <item>@mipmap/icon_main_tab_home_05</item>
+        <item>@mipmap/icon_main_tab_home_06</item>
+        <item>@mipmap/icon_main_tab_home_07</item>
+        <item>@mipmap/icon_main_tab_home_08</item>
+    </string-array>
+    <string-array name="main_tab_near">
+        <item>@mipmap/icon_main_tab_near_00</item>
+        <item>@mipmap/icon_main_tab_near_01</item>
+        <item>@mipmap/icon_main_tab_near_02</item>
+        <item>@mipmap/icon_main_tab_near_03</item>
+        <item>@mipmap/icon_main_tab_near_04</item>
+        <item>@mipmap/icon_main_tab_near_05</item>
+        <item>@mipmap/icon_main_tab_near_06</item>
+        <item>@mipmap/icon_main_tab_near_07</item>
+        <item>@mipmap/icon_main_tab_near_08</item>
+    </string-array>
+    <string-array name="main_tab_list">
+        <item>@mipmap/icon_main_tab_list_00</item>
+        <item>@mipmap/icon_main_tab_list_01</item>
+        <item>@mipmap/icon_main_tab_list_02</item>
+        <item>@mipmap/icon_main_tab_list_03</item>
+        <item>@mipmap/icon_main_tab_list_04</item>
+        <item>@mipmap/icon_main_tab_list_05</item>
+        <item>@mipmap/icon_main_tab_list_06</item>
+        <item>@mipmap/icon_main_tab_list_07</item>
+        <item>@mipmap/icon_main_tab_list_08</item>
+    </string-array>
+    <string-array name="main_tab_me">
+        <item>@mipmap/icon_main_tab_me_00</item>
+        <item>@mipmap/icon_main_tab_me_01</item>
+        <item>@mipmap/icon_main_tab_me_02</item>
+        <item>@mipmap/icon_main_tab_me_03</item>
+        <item>@mipmap/icon_main_tab_me_04</item>
+        <item>@mipmap/icon_main_tab_me_05</item>
+        <item>@mipmap/icon_main_tab_me_06</item>
+        <item>@mipmap/icon_main_tab_me_07</item>
+        <item>@mipmap/icon_main_tab_me_08</item>
+    </string-array>
+</resources>
