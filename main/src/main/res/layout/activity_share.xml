@@ -61,6 +61,14 @@
             android:layout_marginRight="@dimen/dp_20"
             android:background="@mipmap/share_middle_top">
 
+            <ImageView
+                android:id="@+id/save_image"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:src="@mipmap/save_pic_icon"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25" />
+
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/avatar"
                 android:layout_width="@dimen/dp_60"

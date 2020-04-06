@@ -5,6 +5,20 @@
     <application
         android:allowBackup="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.ShanDuiActivity"
+            android:screenOrientation="portrait" ></activity>
+        <activity
+            android:name=".activity.WodeShouyiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DaRenSqActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.RealNameAuthActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LqadActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.BindingRecommanderActivity"
             android:screenOrientation="portrait" />

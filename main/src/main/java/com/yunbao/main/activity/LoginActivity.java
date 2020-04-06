@@ -72,7 +72,7 @@ public class LoginActivity extends AbsActivity implements OnItemClickListener<Mo
     private TextView getCodeTv;
 
     private Timer timer;
-    private int countDownNum=60;
+    private int countDownNum = 60;
 
     @Override
     protected int getLayoutId() {
@@ -140,6 +140,7 @@ public class LoginActivity extends AbsActivity implements OnItemClickListener<Mo
                     return;
                 }
                 sendCode(phoneNum);
+                getCodeTv.setEnabled(false);
             }
         });
 
@@ -153,44 +154,46 @@ public class LoginActivity extends AbsActivity implements OnItemClickListener<Mo
         CommonAppContext.sInstance.startActivity(intent);
     }
 
-    private void sendCode(String tel){
+    private void sendCode(String tel) {
         HttpClient.getInstance().get("Login.DuLiaoGetCode", MainHttpConsts.GET_BASE_INFO)
-                .params("sign", MD5Util.getMD5("mobile="+tel+"&cb7faa54f668457ab446a2198d3ca43b"))
-                .params("mobile",tel )
+                .params("sign", MD5Util.getMD5("mobile=" + tel + "&cb7faa54f668457ab446a2198d3ca43b"))
+                .params("mobile", tel)
                 .execute(new HttpCallback() {
                     @Override
                     public void onSuccess(int code, String msg, String[] info) {
-                        if (code==0){
-                            countDownNum=60;
-                            timer=new Timer();
-                            timer.schedule(new CountDownTask(),100,1000);
-                            getCodeTv.setEnabled(false);
-                        }else{
+                        if (code == 0) {
+                            countDownNum = 60;
+                            timer = new Timer();
+                            timer.schedule(new CountDownTask(), 100, 1000);
+
+                        } else {
                             ToastUtil.show(msg);
+                            getCodeTv.setEnabled(true);
                         }
 
                     }
 
                     @Override
                     public void onError() {
+                        getCodeTv.setEnabled(true);
                     }
                 });
     }
 
-    class  CountDownTask extends TimerTask {
+    class CountDownTask extends TimerTask {
 
         @Override
         public void run() {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if (countDownNum<=0){
+                    if (countDownNum <= 0) {
                         timer.cancel();
-                        timer=null;
+                        timer = null;
                         getCodeTv.setEnabled(true);
                         getCodeTv.setText("获取验证码");
-                    }else{
-                        getCodeTv.setText(countDownNum+"s");
+                    } else {
+                        getCodeTv.setText(countDownNum + "s");
                         countDownNum--;
                     }
 
@@ -198,8 +201,6 @@ public class LoginActivity extends AbsActivity implements OnItemClickListener<Mo
             });
         }
     }
-
-
 
 
     public void loginClick(View v) {
@@ -255,14 +256,14 @@ public class LoginActivity extends AbsActivity implements OnItemClickListener<Mo
 //                onLoginSuccess(code, msg, info);
 //            }
 //        });
-        loginByCode(phoneNum,pwd);
+        loginByCode(phoneNum, pwd);
     }
 
-    private void loginByCode(String tel,String vCode){
+    private void loginByCode(String tel, String vCode) {
         HttpClient.getInstance().get("Login.DuLiaoLoginByCode", MainHttpConsts.LOGIN)
                 .params("mobile", tel)
                 .params("code", vCode)
-                .execute( new HttpCallback() {
+                .execute(new HttpCallback() {
                     @Override
                     public void onSuccess(int code, String msg, String[] info) {
                         onLoginSuccess(code, msg, info);
@@ -299,11 +300,11 @@ public class LoginActivity extends AbsActivity implements OnItemClickListener<Mo
         MainHttpUtil.getBaseInfo(new CommonCallback<UserBean>() {
             @Override
             public void callback(UserBean bean) {
-                if (mFirstLogin) {
-                    RecommendActivity.forward(mContext, mShowInvite);
-                } else {
-                    Main2Activity.forward(mContext, mShowInvite);
-                }
+//                if (mFirstLogin) {
+//                    RecommendActivity.forward(mContext, mShowInvite);
+//                } else {
+                Main2Activity.forward(mContext, mShowInvite);
+//                }
                 finish();
             }
         });
@@ -370,9 +371,9 @@ public class LoginActivity extends AbsActivity implements OnItemClickListener<Mo
             mLoginUtil.release();
         }
         super.onDestroy();
-        if (timer!=null){
+        if (timer != null) {
             timer.cancel();
-            timer=null;
+            timer = null;
         }
     }
 }

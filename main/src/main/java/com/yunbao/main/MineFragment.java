@@ -32,6 +32,35 @@ public class MineFragment extends BaseLazyLoad {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        if (mMeViewHolder != null) {
+            mMeViewHolder.loadData();
+        }
+
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (mMeViewHolder != null && !hidden) {
+            mMeViewHolder.loadData();
+        }
+
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) {
+            if (mMeViewHolder != null) {
+                mMeViewHolder.loadData();
+            }
+
+        }
+    }
+
+    @Override
     protected void lazyLoad() {
 
     }

@@ -38,20 +38,24 @@ import com.yunbao.live.activity.RoomManageActivity;
 import com.yunbao.main.R;
 import com.yunbao.main.activity.AdrwActivity;
 import com.yunbao.main.activity.BindingRecommanderActivity;
+import com.yunbao.main.activity.DaRenSqActivity;
 import com.yunbao.main.activity.EditProfileActivity;
 import com.yunbao.main.activity.FansActivity;
 import com.yunbao.main.activity.FollowActivity;
 import com.yunbao.main.activity.LeijiAidouActivity;
 import com.yunbao.main.activity.LoginActivity;
+import com.yunbao.main.activity.LqadActivity;
 import com.yunbao.main.activity.MyDsttRedPacketActivity;
 import com.yunbao.main.activity.MyProfitActivity;
 import com.yunbao.main.activity.MyVideoActivity;
 import com.yunbao.main.activity.MyadActivity;
+import com.yunbao.main.activity.RealNameAuthActivity;
 import com.yunbao.main.activity.RechargeActivity;
 import com.yunbao.main.activity.SettingActivity;
 import com.yunbao.main.activity.ShareActivity;
 import com.yunbao.main.activity.ShopActivity;
 import com.yunbao.main.activity.ThreeDistributActivity;
+import com.yunbao.main.activity.WodeShouyiActivity;
 import com.yunbao.main.http.MainHttpConsts;
 import com.yunbao.main.http.MainHttpUtil;
 
@@ -77,9 +81,10 @@ public class MainMeViewHolder2 extends AbsMainViewHolder implements OnItemClickL
     private TextView ljadTv;
     private TextView adczTv;
     private TextView codeTv;
-    private TextView logoutTv;
+    private TextView drsqTv;
 
     private List<MyTask> myTasks;
+    private AuthenticationPopupWindow popupWindow;
 
     public MainMeViewHolder2(Context context, ViewGroup parentView) {
         super(context, parentView);
@@ -101,7 +106,7 @@ public class MainMeViewHolder2 extends AbsMainViewHolder implements OnItemClickL
         mName = (TextView) findViewById(R.id.name);
         mID = (TextView) findViewById(R.id.id_val);
         codeTv = (TextView) findViewById(R.id.codeTv);
-        logoutTv = (TextView) findViewById(R.id.logoutTv);
+        drsqTv = (TextView) findViewById(R.id.drsqTv);
 
 
         mAppBarLayout = (AppBarLayout) findViewById(R.id.appBarLayout);
@@ -127,9 +132,13 @@ public class MainMeViewHolder2 extends AbsMainViewHolder implements OnItemClickL
         findViewById(R.id.userProfile).setOnClickListener(this);
         findViewById(R.id.adTv).setOnClickListener(this);
         findViewById(R.id.ljadTv).setOnClickListener(this);
+        findViewById(R.id.drsqTv).setOnClickListener(this);
         findViewById(R.id.logoutTv).setOnClickListener(this);
         findViewById(R.id.myFollowTv).setOnClickListener(this);
         findViewById(R.id.wyfxTv).setOnClickListener(this);
+        findViewById(R.id.authTv).setOnClickListener(this);
+        findViewById(R.id.lqadImage).setOnClickListener(this);
+        findViewById(R.id.wdsyImage).setOnClickListener(this);
 
         MyTask myTask1 = new MyTask();
         myTask1.setIcon(R.mipmap.icon_wdsj);
@@ -156,29 +165,18 @@ public class MainMeViewHolder2 extends AbsMainViewHolder implements OnItemClickL
         myTask5.setText("客服中心");
         myTask5.setId(5);
 
-        MyTask myTask6 = new MyTask();
-        myTask6.setIcon(R.mipmap.icon_sxy);
-        myTask6.setText("商学院");
-        myTask6.setId(6);
-
-        MyTask myTask7 = new MyTask();
-        myTask7.setIcon(R.mipmap.icon_whjjr);
-        myTask7.setText("网红经纪人");
-        myTask7.setId(7);
 
         MyTask myTask8 = new MyTask();
         myTask8.setIcon(R.mipmap.icon_wlsp);
-        myTask8.setText("外链商品");
+        myTask8.setText("网红商城");
         myTask8.setId(8);
 
         myTasks = new ArrayList<>();
         myTasks.add(myTask1);
         myTasks.add(myTask2);
         myTasks.add(myTask3);
-        myTasks.add(myTask4);
         myTasks.add(myTask5);
-        myTasks.add(myTask6);
-        myTasks.add(myTask7);
+        myTasks.add(myTask4);
         myTasks.add(myTask8);
         mGridView.setAdapter(new MyAdapter());
     }
@@ -263,6 +261,7 @@ public class MainMeViewHolder2 extends AbsMainViewHolder implements OnItemClickL
         adTv.setText(u.getAidou() + "\n爱豆");
         dsttTv.setText(u.getDstt() + "\nDSTT");
         ljadTv.setText(u.getLeiji_aidou() + "\n累计爱豆");
+        drsqTv.setText(u.getInvite_num() + "\n达人社群");
         codeTv.setText("邀请码：" + u.getInvite_code());
 
     }
@@ -315,6 +314,18 @@ public class MainMeViewHolder2 extends AbsMainViewHolder implements OnItemClickL
     private void shareActivity() {
         mContext.startActivity(new Intent(mContext, ShareActivity.class));
     }
+    private void userAuthActivity() {
+        mContext.startActivity(new Intent(mContext, RealNameAuthActivity.class));
+    }
+    private void lqadActivity() {
+        mContext.startActivity(new Intent(mContext, LqadActivity.class));
+    }
+    private void drsqActivity() {
+        mContext.startActivity(new Intent(mContext, DaRenSqActivity.class));
+    }
+    private void wdsyActivity() {
+        mContext.startActivity(new Intent(mContext, WodeShouyiActivity.class));
+    }
 
     @Override
     public void onClick(View v) {
@@ -335,19 +346,28 @@ public class MainMeViewHolder2 extends AbsMainViewHolder implements OnItemClickL
             WebViewActivity.forward(mContext, HtmlConfig.DETAIL);
         } else if (i == R.id.btn_shop) {
             WebViewActivity.forward(mContext, HtmlConfig.SHOP);
-        }  else if (i == R.id.adTv) {
+        } else if (i == R.id.adTv) {
             mContext.startActivity(new Intent(mContext, MyadActivity.class));
-        }else if (i == R.id.ljadTv) {
+        } else if (i == R.id.ljadTv) {
             mContext.startActivity(new Intent(mContext, LeijiAidouActivity.class));
         } else if (i == R.id.wyfxTv) {
-//            checkBindingStatus();
             shareActivity();
         } else if (i == R.id.logoutTv) {
             logOut();
+        } else if (i == R.id.authTv) {
+//            checkBindingStatus();
+//            showPopup();
+            userAuthActivity();
+        }else if(i==R.id.lqadImage){
+            lqadActivity();
+        }else if(i==R.id.drsqTv){
+            drsqActivity();
+        }else if(i==R.id.wdsyImage){
+            wdsyActivity();
         }
     }
 
-    private void logOut(){
+    private void logOut() {
         CommonAppConfig.getInstance().clearLoginInfo();
         //退出极光
         ImMessageUtil.getInstance().logoutImClient();
@@ -357,6 +377,13 @@ public class MainMeViewHolder2 extends AbsMainViewHolder implements OnItemClickL
         LoginActivity.forward();
     }
 
+    private void showPopup(){
+        if (popupWindow!=null){
+            popupWindow=null;
+        }
+        popupWindow=new AuthenticationPopupWindow(mContext);
+        popupWindow.showPopupWindow();
+    }
 
     private void checkBindingStatus() {
         HttpClient.getInstance().get("User.CheckIsAgent", MainHttpConsts.GET_BASE_INFO)
@@ -368,7 +395,7 @@ public class MainMeViewHolder2 extends AbsMainViewHolder implements OnItemClickL
                         if (code == 0 && info.length > 0) {
                             if ("0".equals(info[0])) {
                                 bindingRecommander();
-                            }else{
+                            } else {
                                 ToastUtil.show("已经绑定过推荐人");
                             }
                         }

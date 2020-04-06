@@ -53,6 +53,7 @@ public class ShareActivity extends AbsActivity {
     private RoundedImageView avatar;
     private TextView invite_code_rv;
     private ImageView Qrcode_image;
+    private ImageView save_image;
     private TextView shareTv;
     UserBean bean;
 
@@ -74,6 +75,7 @@ public class ShareActivity extends AbsActivity {
         invite_code_rv = findViewById(R.id.invite_code_rv);
         Qrcode_image = findViewById(R.id.Qrcode_image);
         shareTv = findViewById(R.id.shareTv);
+        save_image = findViewById(R.id.save_image);
 
         bean = CommonAppConfig.getInstance().getUserBean();
         ImgLoader.displayAvatar(mContext, bean.getAvatar(), avatar);
@@ -95,6 +97,13 @@ public class ShareActivity extends AbsActivity {
                     }
                 });
                 sharePopupWindow.showPopupWindow();
+            }
+        });
+
+        save_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkPermission("save");
             }
         });
     }
@@ -206,7 +215,11 @@ public class ShareActivity extends AbsActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            Log.e("nxb", result);
+            if ("save".equals(shareType)){
+                ToastUtil.show("图片已成功保存至"+result);
+                return;
+            }
+
             mShareUtil.shareImage(ShareActivity.this, shareType,
                     result, new MobCallback() {
                         @Override

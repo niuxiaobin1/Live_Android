@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.umeng.analytics.MobclickAgent;
@@ -26,6 +27,7 @@ import com.yunbao.main.R;
 import com.yunbao.main.event.RegSuccessEvent;
 import com.yunbao.main.http.MainHttpConsts;
 import com.yunbao.main.http.MainHttpUtil;
+
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -73,6 +75,7 @@ public class RegisterActivity extends AbsActivity {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (!TextUtils.isEmpty(s) && s.length() == 11) {
@@ -148,6 +151,7 @@ public class RegisterActivity extends AbsActivity {
 
         }
     }
+
     /**
      * 获取验证码
      */
@@ -287,12 +291,12 @@ public class RegisterActivity extends AbsActivity {
                     mDialog.dismiss();
                 }
                 if (bean != null) {
-                    if (mFirstLogin) {
-                        RecommendActivity.forward(mContext, mShowInvite);
-                    } else {
-                        Main2Activity.forward(mContext, mShowInvite);
-                    }
-                        EventBus.getDefault().post(new RegSuccessEvent());
+//                    if (mFirstLogin) {
+//                        RecommendActivity.forward(mContext, mShowInvite);
+//                    } else {
+                    Main2Activity.forward(mContext, mShowInvite);
+//                    }
+                    EventBus.getDefault().post(new RegSuccessEvent());
                 }
             }
         });

@@ -270,7 +270,7 @@ public class Main2Activity extends AbsActivity {
 
     public static void forward(Context context, boolean showInvite) {
         Intent intent = new Intent(context, Main2Activity.class);
-        intent.putExtra(Constants.SHOW_INVITE, showInvite);
+        intent.putExtra(Constants.SHOW_INVITE, false);
         context.startActivity(intent);
     }
 

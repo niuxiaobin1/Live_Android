@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.yunbao.common.Constants;
-import com.yunbao.common.mob.MobShareUtil;
 import com.yunbao.main.R;
 
 import razerdp.basepopup.BasePopupWindow;

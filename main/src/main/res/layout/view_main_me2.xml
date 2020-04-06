@@ -60,6 +60,7 @@
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/authTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_10"
@@ -185,6 +186,7 @@
                             android:textSize="13sp" />
 
                         <TextView
+                            android:visibility="gone"
                             android:id="@+id/ljadTv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -237,6 +239,7 @@
                             android:paddingBottom="@dimen/dp_10">
 
                             <ImageView
+                                android:id="@+id/lqadImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -244,6 +247,7 @@
                                 android:src="@mipmap/lqad_pic" />
 
                             <ImageView
+                                android:id="@+id/wdsyImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_marginLeft="@dimen/dp_5"
@@ -353,8 +357,8 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginLeft="@dimen/dp_15"
                         android:layout_marginRight="@dimen/dp_15"
-                        android:numColumns="4"
-                        android:verticalSpacing="@dimen/dp_10"></com.yunbao.main.views.MyGridView>
+                        android:numColumns="3"
+                        android:verticalSpacing="@dimen/dp_20"></com.yunbao.main.views.MyGridView>
                 </RelativeLayout>
             </LinearLayout>
 

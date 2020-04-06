@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/avatar"
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/bg_login"
+            app:riv_oval="true" />
+
+        <TextView
+            android:layout_marginLeft="@dimen/dp_10"
+            android:id="@+id/nameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2020.0.23"
+            android:textColor="#8D8D8D"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/timeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2020.0.23"
+            android:textColor="#8D8D8D"
+            android:textSize="14sp" />
+
+        <TextView
+            android:gravity="right"
+            android:singleLine="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:id="@+id/numTv"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="wrap_content"
+            android:text="+30"
+            android:textColor="#8D8D8D"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:background="@drawable/login_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_5"/>
+
+
+</LinearLayout>
